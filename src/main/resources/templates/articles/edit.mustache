@@ -1,0 +1,19 @@
+{{>layouts/header}}
+
+{{#article}}
+<form class="container" action="/articles/update" method="post">
+    <div>
+        <label class="form-label">제목</label>
+        <input type="text" class="form-control" name="title" value="{{title}}"> <!--DTO의 title필드와 연결-->
+    </div>
+    <input name="id" type="hidden" value="{{id}}">  <!--무엇이 수정되는지 알려줘야함-->
+    <div class="mb-3">
+        <label class="form-label">내용</label>
+        <textarea class="form-control" rows="3" name="content">{{content}}</textarea> <!--DTO의 content와 연결-->
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="/articles/{{id}}">Back</a>
+</form>
+{{/article}}
+
+{{>layouts/footer}}
